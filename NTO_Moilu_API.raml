@@ -1,0 +1,87 @@
+#%RAML 1.0
+types:
+  address:
+    description: Address data type
+    properties:
+      street:
+        example: Example
+        type: string
+      city:
+        example: Example
+        type: string
+      postalCode:
+        example: Example
+        type: string
+      state:
+        example: Example
+        type: string
+      country:
+        example: Example
+        type: string
+  contact:
+    description: Contact data type
+    example:
+      strict: true
+      value:
+        firstName: Example
+        lastName: Example
+        phone: Example
+        email: Example
+        deliveryAddress:
+          street: Example
+          city: Example
+          postalCode: Example
+          state: Example
+          country: Example
+        postalAddress:
+          street: Example
+          city: Example
+          postalCode: Example
+          state: Example
+          country: Example
+    properties:
+      firstName?:
+        example: Example
+        type: string
+      lastName:
+        example: Example
+        type: string
+      phone?:
+        example: Example
+        type: string
+      email?:
+        example: Example
+        type: string
+      deliveryAddress?:
+        type: address
+      postalAddress?:
+        type: address
+title: NTO Moilu Customer API
+baseUri: api.moilusamplebaseuri.com
+description: NTO  customer database API, to access NTO's customer records.
+mediaType:
+  - application/json
+version: 1.0.0
+protocols:
+  - HTTP
+  - HTTPS
+/customers:
+  get:
+    displayName: Get list of customer's
+    responses:
+      "200":
+        body:
+          application/json:
+            items:
+              type: contact
+/customers/{customerId}:
+  get:
+    displayName: Get customer by id
+    responses:
+      "200":
+        body:
+          type: contact
+  uriParameters:
+    customerId:
+      example: Example
+      type: string
