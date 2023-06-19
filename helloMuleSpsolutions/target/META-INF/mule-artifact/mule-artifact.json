@@ -1,0 +1,34 @@
+{
+  "configs": [
+    "global.xml",
+    "helloMuleSpsolutions.xml"
+  ],
+  "secureProperties": [
+    "secure.key",
+    "anypoint.platform.client_id",
+    "anypoint.platform.client_secret"
+  ],
+  "redeploymentEnabled": true,
+  "name": "f4b04931-7179-4b7c-8a4a-7cc8183edf3e:hello_mule_spsolutions:1.0.5",
+  "minMuleVersion": "4.4.0",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "local.secure.properties",
+        "log4j2.xml",
+        "global.xml",
+        "local.properties",
+        "dev.properties",
+        "helloMuleSpsolutions.xml",
+        "dev.secure.properties"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}
